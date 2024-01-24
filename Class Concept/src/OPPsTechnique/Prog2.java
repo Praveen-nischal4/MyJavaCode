@@ -7,6 +7,9 @@ provided that the method's signature (including the method name, number,and type
   and return type) is the same in both the parent and child classes. */
 
 // method overriding is a way of achieving polymorphism
+// Parent class reference to child clas object can access only overridden method in child class 
+// no other method of child class can be accessed by parent class reference 
+// Prog 3 will demonstrate this
 
 package OPPsTechnique;
 
@@ -82,7 +85,7 @@ public class Prog2 {
 
 	public static void main(String[] args) {
 		
-		Result res = new Result();
+		Student res = new Result();  //It creates an object res of type Student but pointing to an instance of Result (polymorphism).
 		res.studentDetail();
 		
 		Student res1 = new Result(55,"Rihan","Mumbai","4 June 2000",89,93,92);
