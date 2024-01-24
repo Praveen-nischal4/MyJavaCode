@@ -12,6 +12,10 @@ class Vehicle
 	protected String color;
 	protected boolean isLiscenceable;
 	
+	Vehicle()
+	{
+		
+	}
 	
 	Vehicle(int vd,String cat,String cl,boolean isL)
 	{
@@ -35,6 +39,12 @@ class Bike extends Vehicle
    	private double price;
 	private double tank_Cap;
 	private String customer_name;
+	private double speed;
+	
+	Bike()
+	{
+		this.speed= 64.34;
+	}
 	
 	Bike(int vd, String cat, String cl, boolean isL,double pr,double tcp,String cname) {
 		super(vd, cat, cl, isL);
@@ -58,6 +68,16 @@ class Bike extends Vehicle
 		System.out.println(" VEhicle price : "+this.price);
 	}
 	
+	public void CheckSpeed()
+	{
+		if(this.speed >=80)
+		{
+			System.out.println("Speed is above threshold");
+		}else
+		{
+			System.out.println("Speed is normal");
+		}
+	}
 }
 public class Prog1 {
 
@@ -65,6 +85,9 @@ public class Prog1 {
 		
 		Vehicle bike = new Bike(34,"Petrol","Red-Black",true,87560.32,45.78,"Mr. Shambhu");
 		bike.vehicleDetail();
+		
+		Bike bike2 = new Bike();     // child class is used to access the unoverriden method of child class
+		bike2.CheckSpeed();
 	}
 
 }
